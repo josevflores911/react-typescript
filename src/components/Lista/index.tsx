@@ -1,5 +1,6 @@
 import React from "react";
 import DB from "../../utils/database";
+import Item from "./Item";
 import style from './Lista.module.scss';
 
 function Lista() {
@@ -9,15 +10,10 @@ function Lista() {
             <h2>Day Studies</h2>
             <ul>
                 {
-                    tarefas.map((act, index) => (
-                        <li key={index} className={style.item}>
-                            <h3>
-                                {act.tarefa}
-                            </h3>
-                            <span>
-                                {act.tempo}
-                            </span>
-                        </li>
+                    tarefas.map((activities) => (
+                        <Item key={activities.id}
+                            {...activities}
+                        />
                     ))
                 }
 
