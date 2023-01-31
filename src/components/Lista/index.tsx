@@ -1,10 +1,9 @@
 import React from "react";
-import DB from "../../utils/database";
+import { ITarefa } from "../../types/ITarefa";
 import Item from "./Item";
 import style from './Lista.module.scss';
 
-function Lista() {
-    const tarefas = DB;
+function Lista({ tarefas }: { tarefas: ITarefa[] }) {
     return (
         <aside className={style.listaTarefas}>
             <h2>Day Studies</h2>
