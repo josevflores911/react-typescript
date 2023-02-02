@@ -7,13 +7,25 @@ interface IProps {
     onClick?: () => void;
 }
 
-class Botao extends React.Component<IProps> {
+class Botao1 extends React.Component<IProps> {
     render() {
         const { type = "button", onClick } = this.props;
         return (
             <button onClick={onClick} type={type} className={style.botao}> {this.props.children}</button>
         )
     }
+}
+//---------------------------------------------------
+interface Props {
+    type?: "button" | "submit" | "reset" | undefined,
+    onClick?: () => void,
+    children?: React.ReactNode
+}
+
+function Botao({ onClick, type, children }: Props) {
+    return (
+        <button onClick={onClick} type={type} className={style.botao}>{children}</button>
+    )
 }
 
 export default Botao;
